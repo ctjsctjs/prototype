@@ -1,0 +1,133 @@
+<html lang="en">
+<head>
+  <title>SkillsCraft</title>
+  <meta charset="utf-8">
+  <meta name="SkillsCraft" content="Index">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">Job Management System</a>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="manager-home.html">Broadcast</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="manager-employee.html">Employee</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="manager-transmitter.html">Transmitter</a>
+        </li>
+      </ul>
+
+      <form class="form-inline my-2 my-lg-0">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Logout <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+      </form>
+    </div>
+  </nav>
+  <div class="container cont-margin-top">
+    <div id="alert" class="alert alert-success d-none">
+      <strong>Success!</strong> Your changes have been succesfully saved.
+    </div>
+    <div class="jumbotron">
+      <h1>Clement Toh</h1>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group row">
+            <label for="example-text-input" class="col-2 col-form-label">Employee ID</label>
+            <div class="col-10">
+              <input class="form-control" type="text" value="123D" id="example-text-input" disabled>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="example-text-input" class="col-2 col-form-label">Salary</label>
+            <div class="col-10">
+              <input class="form-control" type="text" value="$50/hour" id="example-text-input" disabled>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="example-text-input" class="col-2 col-form-label">Payable</label>
+            <div class="col-10">
+              <input class="form-control" type="text" value="$5,000" id="example-text-input" disabled>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <table class="table table-striped table-dark">
+            <thead>
+              <tr>
+                <th scope="col">Job Number</th>
+                <th scope="col">Hours</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>5</td>
+                <td>17</td>
+                <td style="color:grey">Paid</td>
+              </tr>
+              <tr>
+                <td>55</td>
+                <td>23</td>
+                <td style="color:grey">Paid</td>
+              </tr>
+              <tr>
+                <td>25</td>
+                <td>17</td>
+                <td style="color:red">Unpaid</td>
+              </tr>
+              <tr>
+                <td>215</td>
+                <td>23</td>
+                <td style="color:red">Unpaid</td>
+              </tr>
+              <tr>
+                <td>258</td>
+                <td>43</td>
+                <td style="color:red">Unpaid</td>
+              </tr>
+              <tr>
+                <td>525</td>
+                <td>27</td>
+                <td style="color:red">Unpaid</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="../../dist/js/bootstrap.min.js"></script>
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  <script>
+  $("#update").click(function(){
+    $("#alert").removeClass("d-none");
+  });
+
+  </script>
+</body>
+</html>

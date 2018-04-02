@@ -1,0 +1,179 @@
+<html lang="en">
+<head>
+  <title>SkillsCraft</title>
+  <meta charset="utf-8">
+  <meta name="SkillsCraft" content="Index">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">Job Management System</a>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="manager-home.html">Broadcast</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="manager-employee.html">Employee</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="manager-transmitter.html">Transmitter</a>
+        </li>
+      </ul>
+
+      <form class="form-inline my-2 my-lg-0">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Logout <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+      </form>
+    </div>
+  </nav>
+  <div class="container cont-margin-top jumbotron">
+    <div id="assign" class="alert alert-success alert-dismissible d-none">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <strong>Success!</strong> A notification is sent to the engineer.
+    </div>
+      <h1>Broadcasted Jobs</h1>
+      <div class="row" style="padding: 20px 0 20px 0;">
+        <form class="col-md-9 form-inline my-2 my-lg-0">
+          <input class="float-right form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="float-right btn btn-outline-success my-2 my-sm-0" type="submit">Search jobs</button>
+        </form>
+        <div class="dropdown col-md-3">
+          <button class="float-right btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Filter
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Job Number</a>
+            <a class="dropdown-item" href="#">Site</a>
+            <a class="dropdown-item" href="#">Classification</a>
+            <a class="dropdown-item" href="#">Urgency</a>
+            <a class="dropdown-item" href="#">Status</a>
+            <a class="dropdown-item" href="#">Assignee</a>
+          </div>
+        </div>
+
+      </div>
+      <div>
+        <table class="table table-striped table-dark">
+          <thead>
+            <tr>
+              <th scope="col">Job number</th>
+              <th scope="col">Site</th>
+              <th scope="col">Job Description</th>
+              <th scope="col">Fault Description</th>
+              <th scope="col">Classification</th>
+              <th scope="col">Urgency</th>
+              <th scope="col">Progress</th>
+              <th scope="col">Status</th>
+              <th scope="col">Assignee</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr id="item-a">
+              <th scope="row">20</th>
+              <td>Site A</td>
+              <td>Minor Maintenence</td>
+              <td>Screw loose in the devices</td>
+              <td>Maintenence</td>
+              <td style="color:Green">Green</td>
+              <td>Ending Phase...</td>
+              <td>Ongoing</td>
+              <td>Clement</td>
+              <td>
+                <a href="manager-job-detail.html" class="btn btn-primary btn-sm">View</a>
+              </td>
+            </tr>
+            <tr id="item-b">
+              <th scope="row">355</th>
+              <td>Site B</td>
+              <td>Fix lever for the electric box</td>
+              <td>Damaged lever</td>
+              <td>Maintenence</td>
+              <td style="color:Red">Red</td>
+              <td>Need to contact client...</td>
+              <td>Paused</td>
+              <td>Jeremy</td>
+              <td>
+                <a href="manager-job-detail.html" class="btn btn-primary btn-sm">View</a>
+              </td>
+            </tr>
+            <tr id="item-c">
+              <th scope="row">753</th>
+              <td>Site C</td>
+              <td>Upgrade Antenna to new model</td>
+              <td>Antenna speed slow</td>
+              <td>Upgrade</td>
+              <td style="color:Grey">Grey</td>
+              <td>-</td>
+              <td>Not assigned</td>
+              <td>
+                <div class="dropdown">
+                  <button class="btn btn-sm btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Assign
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="assign dropdown-item" href="#">Clement</a>
+                    <a class="assign dropdown-item" href="#">Jeremy</a>
+                    <a class="assign dropdown-item" href="#">Yi Ning</a>
+                    <a class="assign dropdown-item" href="#">Shik</a>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <a href="manager-job-detail.html" class="btn btn-primary btn-sm">View</a>
+              </td>
+            </tr>
+            <tr id="item-d">
+              <th scope="row">5653</th>
+              <td>Site D</td>
+              <td>Review existing system at Site D</td>
+              <td>Detail system for faults</td>
+              <td>Review</td>
+              <td style="color:Orange">Orange</td>
+              <td>Completed</td>
+              <td>Completed</td>
+              <td>-</td>
+              <td>
+                <a href="manager-job-detail.html" class="btn btn-primary btn-sm">View</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <!-- <script src="../../dist/js/bootstrap.min.js"></script> -->
+  <script src="js/bootstrap.min.js"></script>
+
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <!-- <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script> -->
+  <script>
+
+  $(".assign").click(function(){
+
+    $("#assign").removeClass("d-none");
+
+  });
+  </script>
+</body>
+</html>

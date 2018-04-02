@@ -1,0 +1,99 @@
+<html lang="en">
+<head>
+  <title>SkillsCraft</title>
+  <meta charset="utf-8">
+  <meta name="SkillsCraft" content="Index">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <!-- Brand/logo -->
+    <a class="navbar-brand" href="#">Job Management System</a>
+  </nav>
+  <div class="col-md-3"></div>
+  <div class="container col-md-6 custom-login-cont">
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <h2>Please Login</h2>
+          <hr>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <div class="form-group has-danger">
+            <label class="sr-only" for="email">E-Mail Address</label>
+            <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-at"></i></div>
+            <input type="text" name="staffId" class="form-control" id="staffId"
+            placeholder="Staff ID" required autofocus>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-control-feedback">
+            <span class="text-danger align-middle">
+              <i class="fa fa-close"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label class="sr-only" for="password">Password</label>
+            <div class="input-group-addon" style="width: 2.6rem"><i class="fa fa-key"></i></div>
+            <input type="password" name="password" class="form-control" id="password"
+            placeholder="Password" required>
+          </div>
+          <div class="col-md-3"></div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-control-feedback">
+            <span class="text-danger align-middle">
+              <!-- Put password error message here -->
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <div class="row" style="padding-top: 1rem">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <button type="submit" id="validate" class="btn btn-success col-md-12" onclick="validate"><i class="fa fa-sign-in"></i> Login</button>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+  </div>
+  <div class="col-md-3"></div>
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="../../dist/js/bootstrap.min.js"></script>
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  <script>
+    $("#validate").click(function(){
+      var username=$("#staffId").val();
+
+      if (username=="123scheduler"){
+        $(location).attr('href', 'scheduler-home.html')
+      } else if (username=="123engineer"){
+        $(location).attr('href', 'engineer-home.html')
+      } else if (username=="123manager"){
+        $(location).attr('href', 'manager-home.html')
+      }
+    });
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<html lang="en">
+<head>
+  <title>SkillsCraft</title>
+  <meta charset="utf-8">
+  <meta name="SkillsCraft" content="Index">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">Job Management System</a>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="engineer-home.html">Broadcast</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="engineer-jobs.html">My Jobs</a>
+        </li>
+      </ul>
+
+      <form class="form-inline my-2 my-lg-0">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Logout <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+      </form>
+    </div>
+  </nav>
+
+  <div class="container cont-margin-top jumbotron">
+    <div class="">
+      <h1>Accept Jobs</h1>
+      <table class="table table-striped table-dark">
+        <thead>
+          <tr>
+            <th scope="col">Job number</th>
+            <th scope="col">Site</th>
+            <th scope="col">Job Description</th>
+            <th scope="col">Fault Description</th>
+            <th scope="col">Classification</th>
+            <th scope="col">Urgency</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">25</th>
+            <td>Site A</td>
+            <td>Minor Maintenence</td>
+            <td>Screw loose in the devices</td>
+            <td>Maintenence</td>
+            <td style="color:Green">Green</td>
+            <td>
+              <a href="engineer-form.html" class="btn btn-primary btn-sm">Select</a>
+              <button type="button" class="transfer btn btn-primary btn-sm">Transfer</button>
+              <button type="button" class="pause btn btn-primary btn-sm">Resume</button>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">555</th>
+            <td>Site B</td>
+            <td>Fix lever for the electric box</td>
+            <td>Damaged lever</td>
+            <td>Maintenence</td>
+            <td style="color:Red">Red</td>
+            <td>
+              <a href="engineer-form.html" class="btn btn-primary btn-sm">Select</a>
+              <button type="button" class="transfer btn btn-primary btn-sm">Transfer</button>
+              <button type="button" class="pause btn btn-primary btn-sm">Pause</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="../../dist/js/bootstrap.min.js"></script>
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  <script>
+  var activeJobs=1;
+  $(".transfer").click(function(){
+    $(this).parent().parent().remove();
+  });
+
+  $(".pause").click(function(){
+
+    var state = $(this).html();
+
+    if(state=="Pause"){
+      if (activeJobs>0){
+        alert("You already have a job active.")
+      } else {
+        $(this).html("Resume");
+        activeJobs=1;
+      }
+    } else {
+      $(this).html("Pause");
+      activeJobs=0;
+    }
+  });
+  </script>
+</body>
+</html>

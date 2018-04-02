@@ -1,0 +1,129 @@
+<html lang="en">
+<head>
+  <title>SkillsCraft</title>
+  <meta charset="utf-8">
+  <meta name="SkillsCraft" content="Index">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">Job Management System</a>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <!-- <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+    <a class="nav-link disabled" href="#">Disabled</a>
+  </li> -->
+</ul>
+
+<form class="form-inline my-2 my-lg-0">
+  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+    <li class="nav-item active">
+      <a class="nav-link" href="index.html">Logout <span class="sr-only">(current)</span></a>
+    </li>
+  </ul>
+</form>
+</div>
+</nav>
+
+<div class="container cont-margin-top">
+  <div id="alert" class="alert alert-success d-none">
+    <strong>Success!</strong> The job has been successfully added.
+  </div>
+  <div class="jumbotron">
+    <h1>Add job</h1>
+
+    <div class="form-group row">
+      <label for="example-text-input" class="col-2 col-form-label">Job Number</label>
+      <div class="col-10">
+        <input class="form-control" type="text" id="example-text-input">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="example-text-input" class="col-2 col-form-label">Transmitter Sites</label>
+      <div class="col-10">
+        <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+          <option selected>Choose...</option>
+          <option value="1">Site A</option>
+          <option value="2">Site B</option>
+          <option value="3">Site C</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="example-text-input" class="col-2 col-form-label">Urgency</label>
+      <div class="col-10">
+        <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+          <option selected>Choose...</option>
+          <option value="1" style="color:Red">Red</option>
+          <option value="2" style="color:Orange">Amber</option>
+          <option value="3" style="color:Green">Green</option>
+          <option value="4" style="color:Grey">Grey</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="example-text-input" class="col-2 col-form-label">Fault Classification</label>
+      <div class="col-10">
+        <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+          <option selected>Choose...</option>
+          <option value="1">Classification A</option>
+          <option value="2">Classification B</option>
+          <option value="3">Classification C</option>
+          <option value="4">Classification D</option>
+          <option value="5">Classification E</option>
+          <option value="6">Classification F</option>
+          <option value="7">Classification G</option>
+          <option value="8">Classification H</option>
+          <option value="9">Classification I</option>
+          <option value="10">Classification J</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="example-text-input" class="col-2 col-form-label">Job Description</label>
+      <div class="col-10">
+        <textarea class="form-control" rows="5" id="comment"></textarea>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="example-text-input" class="col-2 col-form-label">Fault Description</label>
+      <div class="col-10">
+        <textarea class="form-control" rows="5" id="comment"></textarea>
+      </div>
+    </div>
+    <button id="submit" class="btn btn-lg btn-primary pull-right" role="button">Add job&raquo;</button>
+  </div>
+</div>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="../../dist/js/bootstrap.min.js"></script>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+<script>
+$("#submit").click(function(){
+  $("#alert").removeClass("d-none");
+});
+</script>
+</body>
+</html>
