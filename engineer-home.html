@@ -50,8 +50,8 @@
     <strong>Job Assigned!</strong> Click
     <a href="engineer-job-detail.html"> here </a>
     to view Job Number 25.
-    <a href="engineer-job-detail.html"> Accept </a>/
-    <a href="engineer-job-detail.html"> Decline </a>
+    <a href="#" data-dismiss="alert" class="add2"> Accept </a>/
+    <a href="#" data-dismiss="alert"> Decline </a>
 
   </div>
   <div class="">
@@ -89,26 +89,7 @@
             </div>
           </td>
         </tr>
-        <tr>
-          <th scope="row">555</th>
-          <td>Site B</td>
-          <td>Fix lever for the electric box</td>
-          <td>Damaged lever</td>
-          <td>Maintenence</td>
-          <td style="color:Red">Red</td>
-          <td>
-            <div class="dropdown show">
-              <a class="btn btn-sm btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Actions
-              </a>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" href="engineer-form.html">Select</a>
-                <a class="transfer dropdown-item" href="#">Transfer</a>
-                <a class="pause dropdown-item" href="#">Resume</a>
-              </div>
-            </div>
-          </td>
-        </tr>
+
         <tr id="item-1" class="d-none">
           <th scope="row">25</th>
           <td>Site A</td>
@@ -304,7 +285,7 @@
 <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 <script>
 var activeJobs=0;
-var currentJobs=2;
+var currentJobs=1;
 var item1=false;
 var item2=false;
 var item3=false;
@@ -334,6 +315,28 @@ $(".add").click(function(){
   }
 });
 
+$(".add2").click(function(){
+  if(currentJobs==2){
+    $("#danger").removeClass("d-none");
+  } else {
+
+
+    if(item1==false){
+      $("#item-1").removeClass("d-none");
+      item1=true;
+    } else if(item2==false) {
+      $("#item-2").removeClass("d-none");
+      item2=true;
+    } else if(item3==false) {
+      $("#item-3").removeClass("d-none");
+      item3=true;
+    } else {
+      $("#item-4").removeClass("d-none");
+      item4=true;
+    }
+    currentJobs+=1;
+  }
+});
 $(".transfer").click(function(){
   $(this).parent().parent().parent().parent().remove();
   currentJobs-=1;
