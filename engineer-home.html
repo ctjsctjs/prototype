@@ -83,7 +83,7 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <a class="dropdown-item" href="engineer-form.html">Select</a>
-                <a class="transfer dropdown-item" href="#">Transfer</a>
+                <a class="transfer dropdown-item" href="#">Unassign</a>
                 <a class="pause dropdown-item" href="#">Resume</a>
               </div>
             </div>
@@ -104,7 +104,7 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <a class="dropdown-item" href="engineer-form.html">Select</a>
-                <a class="transfer dropdown-item" href="#">Transfer</a>
+                <a class="transfer dropdown-item" href="#">Unassign</a>
                 <a class="pause dropdown-item" href="#">Resume</a>
               </div>
             </div>
@@ -124,7 +124,7 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <a class="dropdown-item" href="engineer-form.html">Select</a>
-                <a class="transfer dropdown-item" href="#">Transfer</a>
+                <a class="transfer dropdown-item" href="#">Unassign</a>
                 <a class="pause dropdown-item" href="#">Resume</a>
               </div>
             </div>
@@ -144,7 +144,7 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <a class="dropdown-item" href="engineer-form.html">Select</a>
-                <a class="transfer dropdown-item" href="#">Transfer</a>
+                <a class="transfer dropdown-item" href="#">Unassign</a>
                 <a class="pause dropdown-item" href="#">Resume</a>
               </div>
             </div>
@@ -164,7 +164,7 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <a class="dropdown-item" href="engineer-form.html">Select</a>
-                <a class="transfer dropdown-item" href="#">Transfer</a>
+                <a class="transfer dropdown-item" href="#">Unassign</a>
                 <a class="pause dropdown-item" href="#">Resume</a>
               </div>
             </div>
@@ -205,7 +205,7 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <a class="dropdown-item" href="engineer-job-detail.html">View</a>
-                <a class="add transfer dropdown-item" >Accept</a>
+                <a class="add dropdown-item" >Accept</a>
               </div>
             </div>
           </td>
@@ -224,45 +224,7 @@
               </a>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 <a class="dropdown-item" href="engineer-job-detail.html">View</a>
-                <a class="add transfer dropdown-item">Accept</a>
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr id="item-c">
-          <th scope="row">753</th>
-          <td>Site C</td>
-          <td>Upgrade Antenna to new model</td>
-          <td>Antenna speed slow</td>
-          <td>Upgrade</td>
-          <td style="color:Grey">Grey</td>
-          <td>
-            <div class="dropdown show">
-              <a class="btn btn-sm btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Actions
-              </a>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" href="engineer-job-detail.html">View</a>
-                <a class="add transfer dropdown-item" >Accept</a>
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr id="item-d">
-          <th scope="row">5653</th>
-          <td>Site D</td>
-          <td>Review existing system at Site D</td>
-          <td>Detail system for faults</td>
-          <td>Review</td>
-          <td style="color:Orange">Orange</td>
-          <td>
-            <div class="dropdown show">
-              <a class="btn btn-sm btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Actions
-              </a>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                <a class="dropdown-item" href="engineer-job-detail.html">View</a>
-                <a class="add transfer dropdown-item" >Accept</a>
+                <a class="add dropdown-item">Accept</a>
               </div>
             </div>
           </td>
@@ -294,11 +256,13 @@ $(document).ready(function(){
   var item4=false;
 
   $(".add").click(function(){
-    if(currentJobs==2){
+    console.log(currentJobs);
+
+    if(currentJobs > 1){
       $("#danger").removeClass("d-none");
     } else {
 
-      $(this).parent().parent().parent().parent().remove();
+      $(this).parent().parent().parent().parent().addClass("d-none");
       if(item1==false){
         $("#item-1").removeClass("d-none");
         item1=true;
@@ -312,7 +276,7 @@ $(document).ready(function(){
         $("#item-4").removeClass("d-none");
         item4=true;
       }
-      currentJobs+=1;
+      currentJobs++;
       console.log(currentJobs);
     }
   });
@@ -340,7 +304,7 @@ $(document).ready(function(){
   });
 
   $(".transfer").click(function(){
-    $(this).parent().parent().parent().parent().remove();
+    $(this).parent().parent().parent().parent().addClass("d-none");
     currentJobs-=1;
   });
 
@@ -348,6 +312,7 @@ $(document).ready(function(){
     var state = $(this).html();
 
     if(state=="Pause"){
+      $(this).parent().parent().parent().parent().css({background:"#32383e"});
       $(this).html("Resume");
       activeJobs-=1;
 
@@ -355,6 +320,7 @@ $(document).ready(function(){
       if (activeJobs>0){
         $("#exceed").removeClass("d-none");
       } else {
+        $(this).parent().parent().parent().parent().css({background:"#7ca35d"});
         $(this).html("Pause");
         activeJobs=1;
       }

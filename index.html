@@ -16,6 +16,10 @@
   </nav>
   <div class="col-md-3"></div>
   <div class="container col-md-6 custom-login-cont">
+    <div id="danger" class="alert alert-danger alert-dismissible d-none">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <strong>Unsuccessful!</strong> Your login username or password is invalid.
+    </div>
       <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6">
@@ -84,13 +88,16 @@
   <script>
     $("#validate").click(function(){
       var username=$("#staffId").val();
+      var password=$("#password").val();
 
-      if (username=="123scheduler"){
+      if (username=="123scheduler" && password=="ilove2108"){
         $(location).attr('href', 'scheduler-home.html')
-      } else if (username=="123engineer"){
+      } else if (username=="123engineer" && password=="ilove2108"){
         $(location).attr('href', 'engineer-home.html')
-      } else if (username=="123manager"){
+      } else if (username=="123manager" && password=="ilove2108"){
         $(location).attr('href', 'manager-home.html')
+      } else {
+        $("#danger").removeClass("d-none");
       }
     });
 
